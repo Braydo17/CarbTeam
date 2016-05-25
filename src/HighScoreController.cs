@@ -96,7 +96,9 @@ static class HighScoreController
 	/// 
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
-	private static void SaveScores()
+	
+	//saves scores 
+	private static void SaveScores() 
 	{
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
@@ -127,7 +129,7 @@ static class HighScoreController
 
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
-		//For all of the scores
+		//For all of the scores displayed
 		int i = 0;
 		for (i = 0; i <= _Scores.Count - 1; i++) {
 			Score s = default(Score);
@@ -180,7 +182,7 @@ static class HighScoreController
 
 			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
 
-			//Read the text from the user
+			//Reads the text from the user
 			while (SwinGame.ReadingText()) {
 				SwinGame.ProcessEvents();
 
@@ -201,7 +203,7 @@ static class HighScoreController
 			_Scores.Sort();
 
 			GameController.EndCurrentState();
-			SaveScores(); //saves scores and writes to file - Niruban.
+			SaveScores(); //saves scores and writes to file.
 		}
 	}
 }
