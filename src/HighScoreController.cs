@@ -201,6 +201,7 @@ static class HighScoreController
 			_Scores.Sort();
 
 			GameController.EndCurrentState();
+			SaveScores(); //saves scores and writes to file - Niruban.
 		}
 	}
 }
