@@ -176,7 +176,13 @@ public class SeaGrid : ISeaGrid
 			}
 
 			_GameTiles[row, col].Shoot();
-
+			Ship ship = _GameTiles[row, col].Ship;
+            
+            if (ship != null && _GameTiles[row, col].Shot == false)
+            {
+                return new AttackResult(ResultOfAttack.Miss, "missed", row, col);
+            }
+			
 			//there is no ship on the tile
 			if (_GameTiles[row, col].Ship == null) {
 				return new AttackResult(ResultOfAttack.Miss, "missed", row, col);

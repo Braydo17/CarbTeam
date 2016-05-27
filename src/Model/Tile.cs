@@ -120,9 +120,24 @@ public class Tile
 	internal void Shoot()
 	{
 		if ((false == Shot)) {
-			Shot = true;
-			if (_Ship != null) {
-				_Ship.Hit();
+            Shot = true;
+            if (_Ship != null) {
+				Random rnd = new Random();       
+				switch (_Ship.Name) {
+					case "Aircraft Carrier":
+						double d = rnd.NextDouble();
+                        if (d < 0.5)
+                        {
+                            _Ship.Hit();
+                            break;
+                        }
+                        else
+                            Shot = false;
+							break;
+					default:
+						_Ship.Hit();
+                        break;
+				}				
 			}
 		} else {
 			throw new ApplicationException("You have already shot this square");
