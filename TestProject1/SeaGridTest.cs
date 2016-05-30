@@ -83,7 +83,8 @@ namespace TestProject1
             actual = target.HitTile(row, col);
             Assert.AreEqual(expected.Value, actual.Value);
         }
-        /*public void HitTileTest()
+        [TestMethod()]
+        public void HitTileTest()
         {
             Dictionary<ShipName, Ship> ships = null; // TODO: Initialize to an appropriate value
             SeaGrid target = new SeaGrid(ships); // TODO: Initialize to an appropriate value
@@ -95,6 +96,6 @@ namespace TestProject1
             AttackResult actual;
             actual = target.HitTile(row, col);
             Assert.AreEqual(expected.Value, actual.Value);
-        }*/
+        }
     }
 }
